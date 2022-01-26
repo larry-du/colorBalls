@@ -9,7 +9,7 @@ const clearButton = document.querySelector(".clear");
 
 let balls = [];
 let keyNumber = 0;
-let started = true;
+let started = false;
 
 function initCanvas(){
     myCanvas.width = innerWidth;
@@ -70,6 +70,7 @@ initCanvas();
 
 startButton.addEventListener("click",async ()=>{
     if(!keyNumber) return alert("請先輸入正整數")
+    if(started) return
     started = true;
     balls = [];
     await initBall(keyNumber)
